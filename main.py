@@ -1,6 +1,7 @@
 from random import randint
 import urllib
 import os
+import requests
 
 def clipboard(url):
     command = 'echo ' + url.strip() + '| clip'
