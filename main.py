@@ -1,5 +1,4 @@
 from random import randint
-import requests
 import urllib
 import os
 
