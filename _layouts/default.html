@@ -47,11 +47,21 @@ e<!DOCTYPE html>
 
     <div class="container">
       <div class="center">
-        <button>Generate Game</button>
+        <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
       </div>
-    <?PHP
-    echo shell_exec("python roblox-random-game/main.py 'parameter1'");
-    ?>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        function goPython(){
+            $.ajax({
+              url: "main.py",
+             context: document.body
+            }).done(function() {
+             alert('finished python script');;
+            });
+        }
+    </script>
     </div>
     </main>
   </body>
