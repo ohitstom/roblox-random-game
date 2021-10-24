@@ -12,15 +12,14 @@ def find_game():
     url = ("https://www.roblox.com/games/" + str(random_code))
 
     try:
-        found = urllib.request.urlopen(url).geturl()
-        return found if "Place" not in found else True
+        return urllib.request.urlopen(url).geturl()
     except:
         return True
 
 def main():
     while True:
         game = find_game()
-        if game != True:
+        if game != True and 'Place' not in game:
             os.system('cls')
             print('[Found Valid URL] -- Added To Your Clipboard\n\n' + game + '\n')
             clipboard(game)
