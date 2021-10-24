@@ -44,58 +44,57 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2
         with:
-          path: './Spicetify-Easyinstall'
+          path: './roblox-random-game'
 
       - name: Build
         run: |
-          cd .\Spicetify-Easyinstall
+          cd .\roblox-random-game
           python -m pip install -r requirements.txt
           pyinstaller --clean -y --dist dist\windows --workpath tmp build.spec
 
       - name: Cleanup + Include .py files
         shell: cmd
         run: |
-          cd      .\Spicetify-Easyinstall
-          del  /f dist\windows\Spicetify-Easyinstall\opengl32sw.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5DBus.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5Network.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5Qml.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5QmlModels.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5Quick.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5Svg.dll
-          del  /f dist\windows\Spicetify-Easyinstall\Qt5WebSockets.dll
-          mkdir   dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\aiohttp            dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\multidict          dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\yarl               dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\*.pyd              dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\api-ms-win-*       dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\d3dcompiler_47.dll dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\libcrypto-1_1.dll  dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\libEGL.dll         dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\libffi-7.dll       dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\libGLESv2.dll      dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\libssl-1_1.dll     dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\MSVCP140_1.dll     dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\MSVCP140.dll       dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\ucrtbase.dll       dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\VCRUNTIME140_1.dll dist\windows\Spicetify-Easyinstall\lib
-          move /y dist\windows\Spicetify-Easyinstall\VCRUNTIME140.dll   dist\windows\Spicetify-Easyinstall\lib
-          mkdir   dist\windows\Spicetify-Easyinstall\modules
-          copy /y Spicetify-Easyinstall.py                              dist\windows\Spicetify-Easyinstall
-          copy /y requirements.txt                                      dist\windows\Spicetify-Easyinstall
-          copy /y modules                                               dist\windows\Spicetify-Easyinstall\modules
+          cd      .\roblox-random-game
+          del  /f dist\windows\roblox-random-game\opengl32sw.dll
+          del  /f dist\windows\roblox-random-game\Qt5DBus.dll
+          del  /f dist\windows\roblox-random-game\Qt5Network.dll
+          del  /f dist\windows\roblox-random-game\Qt5Qml.dll
+          del  /f dist\windows\roblox-random-game\Qt5QmlModels.dll
+          del  /f dist\windows\roblox-random-game\Qt5Quick.dll
+          del  /f dist\windows\roblox-random-game\Qt5Svg.dll
+          del  /f dist\windows\roblox-random-game\Qt5WebSockets.dll
+          mkdir   dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\aiohttp            dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\multidict          dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\yarl               dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\*.pyd              dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\api-ms-win-*       dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\d3dcompiler_47.dll dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\libcrypto-1_1.dll  dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\libEGL.dll         dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\libffi-7.dll       dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\libGLESv2.dll      dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\libssl-1_1.dll     dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\MSVCP140_1.dll     dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\MSVCP140.dll       dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\ucrtbase.dll       dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\VCRUNTIME140_1.dll dist\windows\roblox-random-game\lib
+          move /y dist\windows\roblox-random-game\VCRUNTIME140.dll   dist\windows\roblox-random-game\lib
+          mkdir   dist\windows\roblox-random-game\modules
+          copy /y main.py                              dist\windows\roblox-random-game
+          copy /y requirements.txt                                      dist\windows\roblox-random-game
 
       - name: Zip package
         shell: cmd
-        run: 7z a -r .\Spicetify-Easyinstall-v${{ github.event.release.tag_name }}.zip .\Spicetify-Easyinstall\dist\windows\Spicetify-Easyinstall\*
+        run: 7z a -r .\roblox-random-game-v${{ github.event.release.tag_name }}.zip .\roblox-random-game\dist\windows\roblox-random-game\*
 
       - name: Publish package
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: ./Spicetify-Easyinstall-v${{ github.event.release.tag_name }}.zip
+          files: ./roblox-random-game-v${{ github.event.release.tag_name }}.zip
 
       - name: Purge old artifacts
         uses: kolpav/purge-artifacts-action@v1
