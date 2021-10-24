@@ -47,8 +47,11 @@ e<!DOCTYPE html>
 
     <div class="container">
       <div class="center">
-        <button>Centered Button</button>
+        <button>Generate Game</button>
       </div>
+    <?PHP
+    echo shell_exec("python roblox-random-game/main.py 'parameter1'");
+    ?>
     </div>
     </main>
   </body>
