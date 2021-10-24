@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['Spicetify-Easyinstall.py'],
+a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
              datas=[( 'resources', 'resources' )],
@@ -21,14 +21,13 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='Spicetify-Easyinstall',
+          name='Random Game Generator',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           console=False,
           uac_admin=False,
-          icon='resources/icons/icon.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -36,4 +35,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='Spicetify-Easyinstall')
+               name='Random Game Generator')
